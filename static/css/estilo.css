@@ -1,0 +1,21 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.character{
+	text-align: center;
+}
+.character-img{
+	text-align: center;
+}
+
+.character-label{
+	background: blue;
+}
+.character-labels{
+	max-width: 300px;
+}
+.character-name{
+	font-size: 50px;
+}
