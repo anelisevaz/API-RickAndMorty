@@ -1,7 +1,7 @@
 import API from './api.js'
 import Character from './character.js'
 const api = new API()
-let currentCaracter = 4
+let currentCaracter = 1
 const $loadNext = document.querySelector('#load-next')
 
 $loadNext.addEventListener('click', async () => {
