@@ -16,33 +16,34 @@ export default class Character {
   buildImage() {
     return `
       <img class="character-image" src=${this.image} alt=${this.name}>
-    `
+          `
   }
   buildName() {
     return `
-      <div class="character-name">
+        <div class="character-name">
         <h1>${this.name}</h1>
       </div>
     `
   }
   buildDescription() {
-if(this.gender == "Female"){
+if(this.species == "Human"){
 return `
+  
 <div class="character-labels">
-        <p class="character-labeli">Genero: ${this.gender}</p>`}
+        <p class="character-labeli">Espécie: ${this.species}</p>`}
 else{
 return `<div class="character-labels">
-        <p class="character-labelo">Genero: ${this.gender}</p>
+        <p class="character-labelo">Espécie: ${this.species}</p>
         `}
   }
   
   buildStatus(){
 	return`
 	 <div class="character-labels">
-        <p class="character-status">Status: ${this.status}</p>
-        <p class="character-species">Espécie: ${this.species}</p>
+        <p class="character-gender">Genero: ${this.gender}</p>
         <p class="character-type">Tipo: ${this.type}</p>
-      </div>
+        <p class="character-status">Status: ${this.status}</p>
+        </div>
 	`
 }
   
