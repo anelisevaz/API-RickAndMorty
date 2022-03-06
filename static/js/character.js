@@ -1,3 +1,4 @@
+
 export default class Character {
   constructor({ name, image, gender, species, type, status }) {
     this.name = name
@@ -19,40 +20,74 @@ export default class Character {
           `
   }
   buildName() {
+	if(this.species == "Human" && this.status == "Alive"){
     return `
+       <h1 class="character-namee">${this.name}</h1>
+      </div>
+    `}
+    else{
+return `
         <div class="character-name">
         <h1>${this.name}</h1>
       </div>
     `
-  }
+  }}
+  
+  
+  
   buildDescription() {
-if(this.species == "Human"){
+if(this.species == "Human" && this.status == "Alive"){
 return `
-  
-<div class="character-labels">
-        <p class="character-labeli">Espécie: ${this.species}</p>`}
-else{
-return `<div class="character-labels">
-        <p class="character-labelo">Espécie: ${this.species}</p>
-        `}
-  }
-  
-  buildStatus(){
-	return`
-	 <div class="character-labels">
+
+        <p class="character-species">Espécie: ${this.species}</p>
+         <div class="character-labels">
         <p class="character-gender">Genero: ${this.gender}</p>
         <p class="character-type">Tipo: ${this.type}</p>
         <p class="character-status">Status: ${this.status}</p>
-        </div>
-	`
-}
-  
+      
+`}
+else if(this.species == "Human" && this.status == "Dead"){
+return `
+        <p class="character-species">Espécie: ${this.species}</p>
+         <div class="character-labels">
+        <p class="character-gender">Genero: ${this.gender}</p>
+        <p class="character-type">Tipo: ${this.type}</p>
+        <p class="character-status">Status: ${this.status}</p>
+       
+        `}
+
+else{
+return `
+        <p class="character-species">Espécie: ${this.species}</p>
+        	 <div class="character-labels">
+        <p class="character-gender">Genero: ${this.gender}</p>
+        <p class="character-type">Tipo: ${this.type}</p>
+        <p class="character-status">Status: ${this.status}</p>       
+       
+       
+       
+       <p>
+			Espécies:
+			unknown
+			Alien
+			Human
+			Poopybutthole - espécie fantasma quadridimensional, Ele sobrevive de vidas semelhantes às que os caranguejos eremitas usam para roubar outras conchas
+			Mythological Creature
+			Animal
+			Robot
+			Cronenberg - A Mosca - iamgem
+			Humanoid
+			Disease  -doença
+       </p>
+        `}
+  }
+ 
+
   
   render() {
     this.$characterImageContainer.innerHTML = this.buildImage()
     this.$characterNameContainer.innerHTML = this.buildName()
     this.$characterDescriptionContainer.innerHTML = this.buildDescription()
-    this.$characterStatusContainer.innerHTML = this.buildStatus()
     this.$characterNamePlaceHolderContainer.innerHTML = this.name
   }
 }
