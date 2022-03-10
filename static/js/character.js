@@ -20,27 +20,24 @@ export default class Character {
           `
   }
   buildName() {
-	if(this.species == "Human" && this.status == "Alive"){
+	if(this.species == "Human"){
     return `
-       <h1 class="character-namee">${this.name}</h1>
+       <h1 class="character-name-human">${this.name}</h1>
       </div>
     `}
     else{
 return `
-        <div class="character-name">
+        <div class="character-name-alien">
         <h1>${this.name}</h1>
       </div>
     `
   }}
   
   
-  
   buildDescription() {
 if(this.species == "Human" && this.status == "Alive"){
 return `
-
         <p class="character-species">Espécie: ${this.species}</p>
-         <div class="character-labels">
         <p class="character-gender">Genero: ${this.gender}</p>
         <p class="character-type">Tipo: ${this.type}</p>
         <p class="character-status">Status: ${this.status}</p>
@@ -49,25 +46,22 @@ return `
 else if(this.species == "Human" && this.status == "Dead"){
 return `
         <p class="character-species">Espécie: ${this.species}</p>
-         <div class="character-labels">
         <p class="character-gender">Genero: ${this.gender}</p>
         <p class="character-type">Tipo: ${this.type}</p>
-        <p class="character-status">Status: ${this.status}</p>
-       
+        <p class="character-status">Status: ${this.status}</p>       
         `}
 
 else{
 return `
         <p class="character-species">Espécie: ${this.species}</p>
-        	 <div class="character-labels">
         <p class="character-gender">Genero: ${this.gender}</p>
         <p class="character-type">Tipo: ${this.type}</p>
         <p class="character-status">Status: ${this.status}</p>       
-       
-       
-       
-       <p>
-			Espécies:
+              `}
+  }
+ 
+     
+	/*	Espécies:
 			unknown
 			Alien
 			Human
@@ -78,10 +72,7 @@ return `
 			Cronenberg - A Mosca - iamgem
 			Humanoid
 			Disease  -doença
-       </p>
-        `}
-  }
- 
+      */
 
   
   render() {
