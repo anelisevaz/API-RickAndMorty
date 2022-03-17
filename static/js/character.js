@@ -15,10 +15,17 @@ export default class Character {
     this.render()
   }
   buildImage() {
+   if(this.species == "Human"){
     return `
-      <img class="character-image" src=${this.image} alt=${this.name}>
-          `
-  }
+      <img class="character-image-human" src=${this.image} alt=${this.name}>
+    `}
+    else{
+return `
+	<img class="character-image-alien"" src=${this.image} alt=${this.name}>
+    `
+  }}
+  
+  
   buildName() {
 	if(this.species == "Human"){
     return `
